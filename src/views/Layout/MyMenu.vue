@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-menu default-active="1" class="el-menu-vertical-demo" background-color="#4a73be" text-color="#fff"
+        <el-menu :default-active="$route.path" class="el-menu-vertical-demo" background-color="#4a73be" text-color="#fff"
             @open="handleOpen" active-text-color="#ffd04b" @close="handleClose" router
             :collapse="isCollapse">
             <el-menu-item>
@@ -10,11 +10,11 @@
                 <i class="el-icon-location"></i>
                 <span>首页</span>
             </el-menu-item>
-            <el-menu-item index="goods">
+            <el-menu-item index="/goods">
                 <i class="el-icon-menu"></i>
                 <span slot="title">商品管理</span>
             </el-menu-item>
-            <el-submenu index="params">
+            <el-submenu index="/params">
                 <template slot="title">
                     <i class="el-icon-document"></i>
                     <span>规格参数</span>
@@ -24,7 +24,7 @@
                 </el-menu-item-group>
             </el-submenu>
 
-            <el-submenu index="order">
+            <el-submenu index="/order">
                 <template slot="title">
                     <i class="el-icon-setting"></i>
                     <span slot="title">订单管理</span>
@@ -34,7 +34,7 @@
                     <el-menu-item index="4-2">退货管理</el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
-            <el-menu-item index="user">
+            <el-menu-item index="/user">
                 <i class="el-icon-setting"></i>
                 <span slot="title">用户管理</span>
             </el-menu-item>

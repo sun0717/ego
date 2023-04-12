@@ -8,4 +8,16 @@ module.exports = defineConfig({
   chainWebpack: (config) => {
     config.resolve.alias.set("@", resolve("src"));
   },
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8989',
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api':''
+        }
+      }
+    }
+  }
 });
